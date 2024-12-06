@@ -1,0 +1,76 @@
+@import "../mixins";
+@import "../variables";
+
+.section{
+	.item-detail{
+		.item-img{
+			.img{
+				height: 200px;
+				width: 100%;
+				box-shadow: 0px 0 3px rgba(0, 0, 0, 0.2), 2px 0 8px rgba(0, 0, 0, 0.2);
+				border: 8px solid $white;
+				@media (min-width: 601px){
+					height: 360px;
+				}
+			}
+			img{
+				box-shadow: 0px 0 3px rgba(0, 0, 0, 0.2), 2px 0 8px rgba(0, 0, 0, 0.2);
+				border: 8px solid $white;
+			}
+		}
+		.item-desc{
+			@include clearfix;
+			margin-bottom: 32px;
+			position: relative;
+			width: 100%;
+			padding: 16px;
+			box-sizing: border-box;
+			@media (min-width: 601px){
+				padding: 64px 0;
+			}
+			.btns{
+				margin-top: 32px;
+			}
+			h4{
+				font-family: $sans;
+				font-size: $text-size;
+				font-weight: normal;
+				color: $white;
+				text-transform: uppercase;
+			}
+			h3,
+			.title{
+				font-size: 2em;
+				font-family: $serif;
+				color: $color1;
+				position: relative;
+				margin-bottom: 8px;
+				padding-bottom:  8px;
+				font-weight: bold;
+			}
+			.price{
+				font-size: 24px;
+				margin-top: 8px;
+				margin-bottom: 0px;
+				padding-bottom: 0px;
+				font-family: $sans;
+				font-weight: normal;
+			}
+			.desc{
+				p{
+					font-family: $sans;
+					font-size: $text-size;
+					color: $white;
+				}
+			}
+		}
+		&.two-columns{
+			.item-desc{
+				padding: 0;
+				@media (min-width: 801px){
+					padding-right: 40px;
+				}
+			}
+		}
+	}
+}

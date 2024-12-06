@@ -1,0 +1,78 @@
+@import "./mixins";
+@import "./variables";
+
+.magic-btn{
+	@include magic-button($color1, $color1, 1px);
+}
+.magic-btn-black{
+	@include magic-button($black, $black, 1px);
+	&:hover{
+		color: $black;
+	}
+}
+
+.normal-btn{
+	display: inline-block;
+	color: $white;
+	font-size: $text-size;
+	.icon{
+		content: "";
+		height: 32px;
+		width: 32px;
+		background: $color1;
+		display: inline-block;
+		position: relative;
+		border-radius: 32px;
+		vertical-align: middle;
+		transition: 0.3s;
+		&:before{
+			content: "";
+			position: absolute;
+			background: $white;
+			top: 15.5px;
+			bottom: 15.5px;
+			right: 10px;
+			width: 48px;
+			z-index: 1;
+			transition: 0.3s;
+		}
+		&:after{
+			content: "";
+			position: absolute;
+			border: 4px solid $white;
+			border-top: none;
+			border-left: none;
+			$dist: 10px;
+			top: $dist;
+			left: $dist;
+			right: $dist;
+			bottom: $dist;
+			width: auto;
+			transition: 0.3s;
+			transform:  translateX(-2px) rotate(-45deg);
+		}
+	}
+	&.inv-btn{
+		.icon{
+			transform: rotate(180deg);
+		}
+	}
+	.txt{
+		vertical-align: middle;
+		padding: 8px 8px;
+	}
+	&:active,
+	&:hover{
+		color: $color1;
+		.icon{
+			background: $white;
+			&:before{
+				background: $color1;
+				width: 22px;
+			}
+			&:after{
+				border-color: $color1;
+			}
+		}
+	}
+}

@@ -1,0 +1,123 @@
+@import "../mixins";
+@import "../variables";
+
+.site-footer{
+	position: relative;
+	padding-top: 16px;
+	background: $black;
+	@include clearfix;
+	@media(min-width: 601px){
+		position: fixed;
+		background: none;
+	}
+	z-index: 10;
+	.note{
+		position: relative;
+		left: 0;
+		bottom: 0;
+		float: left;
+		margin-left: 16px;
+		margin-bottom: 18px;
+		@media(min-width: 601px){
+			margin-left: 48px;
+			margin-bottom: 20px;
+			position: fixed;
+		}
+		.icon{
+			font-size: 40px;
+			color : $medium-gray;
+			display: inline-block;
+			margin-right: 8px;
+			line-height: 1;
+		}
+		.desc{
+			display: inline-block;
+		}
+		p{
+			font-size: 13px;
+			font-family: $sans;
+			color: $medium-gray;
+			font-weight: 300;
+			margin-bottom: 0;
+			transition: 0.3s;
+		}
+		.marked{
+			color: $color1;
+		}
+	}
+	.contact{
+		float: right;
+		position: relative;
+		right: 16px;
+		bottom: 16px;
+		@media(min-width: 601px){
+			position: fixed;
+			right: 48px;
+			bottom: 24px;
+		}
+		left: auto;
+		&.s-right{
+			float: left;
+			right: auto;
+			left: 0;
+		}
+		.links{
+			
+		}
+		.socials{
+			display: none;
+			float: left;
+			margin-top: 24px;
+			@media(min-width: 601px){
+				margin-top: 0;
+				display: block;
+			}
+			li{
+				float: left;
+				margin-left: 8px;
+				position: relative;
+				
+				a{
+					//display: inline-block;
+					display: table-cell;
+					vertical-align: middle;
+					width: 32px;
+					height: 32px;
+					text-align: center;
+					border-radius: 20px;
+					border: 1px solid $medium-gray;
+					color: $medium-gray;
+					//color: $color1;
+					line-height: 1;
+					//padding-top: 8px;
+					font-size: 16px;
+					position: relative;
+					&:before{
+						position: absolute;
+						z-index: -1;
+						content: "";
+						transform: rotate(0deg);
+						background: transparentize($white,0.9);
+						//background: transparentize($color1,0.9);
+						top: 3px;
+						left: 3px;
+						bottom: 3px;
+						right: 3px;
+						border-radius: 40px;
+						transition: 0.3s;
+					}
+					&:hover{
+						color: $black;
+						&:before{
+							top: 0;left: 0;right: 0;bottom: 0;
+							background: $white;
+						}
+						//background: $white;
+					}
+				}
+			}
+		}
+	}
+}
+
+

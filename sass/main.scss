@@ -1,0 +1,103 @@
+/*-----------------------------------------------------------------
+[Legal Notice]
+
+Copyright (c) HighHay/Mivfx
+Before using this template, you should agree with themeforest licenses terms.
+http://themeforest.net/licenses
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+[Table of contents]
+/** CSS Reference
+    0. Base Style
+	1. 1. Header, and page menu 
+		1.1 Header (logo)/ .header-top
+		1.2 Menu / .page-menu, .header-top .menu-icon
+		Dot/bar Navigation at right / #fp-nav.right (hooking fullpage.js plugin)
+	2. Background cover image / .page-cover 
+	3. Main content / .main
+		3.1 Fullscreen sections overall style / .section 
+		3.2 Home page section (including the clock) / .section-home 
+		3.3 About page section / .section-about
+		3.4 Projects/Feature/Contact address list / .section .c-features
+		3.5 Gallery grid list / .section .gallery-slides .c-gallery
+		3.6 Contact page section and forms / 
+	4. Item detail slides / item.html : #itemdetail-page , .section.page-slides .slide
+	5. Footer / .site-footer
+	6. Responsiveness
+	
+	Hooks to altering this css file can be found in "style-colorX.css" file 
+
+**/
+/*---------- 
+[Colors]
+    text color : #FFFFFF, #FFF
+    blue : #4394e5
+*/
+
+
+/* 0. Base Style  */
+@import "./init.scss";
+/* 0.1 Helper classes */
+@import "./helper.scss";
+/* 0.3 basic views and components */
+@import "./views.scss";
+@import "./components/_view_featured_items"; 
+@import "./components/_view_scroll_footer"; 
+@import "./components/_view_slider_items"; 
+@import "./components/_view_itemlist"; 
+
+/* 1. Header, and page menu */
+/* 1.1 Header (logo)/ .header-top */
+@import "./components/header.scss";
+
+/* 1.2 Menu / .page-menu, .header-top .menu-icon */
+@import "./components/menu";
+
+/* 1.3 Dot/bar Navigation at right / #fp-nav.right (hooking fullpage.js plugin) */
+@import "./components/navrightdot";
+
+
+/* 2 Background cover image / .page-cover */ 
+@import "./components/cover";
+
+
+/* 3. main content / .main */
+.main{
+	min-height: 100%;
+}
+/* 3.1 Fullscreen sections overall style / .section */
+@import "./components/_page_main"; 
+
+/* 3.2 Home page section (including the clock) / .section-home */
+@import "./components/_page_home"; 
+
+/* 3.3 About us section / .section-about */
+@import "./components/_page_about"; 
+
+/* 3.4 Section header cover / .section-header */
+@import "./components/_page_header_cover"; 
+
+/* 3.5 Gallery grid list / .section .gallery-slides .c-gallery */
+//@import "./components/_page_gallerylist"; 
+
+/* 3.6 Contact page section and forms / .section-contact */
+@import "./components/_page_contact.scss"; 
+
+
+/* 4. Item detail slides / item.html : #itemdetail-page , .section.page-slides .slide */
+@import "./components/_page_itemdetail.scss"; 
+
+
+/* 5 Section Footer / .section-footer */
+@import "./components/_page_footer.scss"; 
+
+
+/* 5 Footer / .site-footer */
+@import "./components/_footer.scss"; 
+	    
+
+/* 6. Responsiveness */ 
+@import "./components/_responsive"; 
+
+

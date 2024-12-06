@@ -1,0 +1,67 @@
+.section-footer{
+	background: transparentize(#090917,0.05);
+	height: auto !important;
+	.fp-tableCell{
+		height: auto !important;
+	}
+	.content{
+		text-align: left;
+		.f-logo{
+			img{
+				height: 96px;
+			}
+			h2{
+				font-size: 1.5em;
+				color: $color1;
+				font-family: $serif;
+			}
+		}
+		h3{
+			font-size: 1em;
+			font-weight: bold;
+			color: $color1;
+			margin-bottom: 8px;
+		}
+		li{
+			font-size: 15px;
+			a{
+				color: $white;
+				opacity: 0.6;
+				transition: 0.3s;
+				&:hover{
+					opacity: 1;
+				}
+			}
+		}
+		.contact-registration{
+			border-top: 1px solid $color1;
+			padding-top: 32px;
+			margin-top: 32px;
+			form{
+				label{
+					color: $color1;
+					font-size: 12px;
+				}
+				input{
+					height: 40px;
+				}
+				.magic-btn{
+					background: transparentize($white,0.8);
+				}
+			}
+		}
+		.socials{
+			margin-left: -12px;
+			li{
+				float: left;
+				
+				.icon{
+					text-align: center;
+					font-size: 24px;
+					width: 1.4em;
+					display: inline-block;
+				}
+			}
+		}
+	}
+}

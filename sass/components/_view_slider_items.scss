@@ -1,0 +1,241 @@
+@import "../mixins";
+@import "../variables";
+
+
+
+.slider-items{
+	//position: relative;
+	max-width: none;
+	margin-right: 0;
+	@media(min-width: 601px){
+		margin-right: -128px + 22px;
+	}
+	// pagination
+	.slide-pagination,
+	.items-pagination,
+	.swiper-pagination{
+		position: absolute;
+		right: 16px;
+		top:164px;
+		@media(min-width: 601px){
+			right: 128px;
+			top:80px;
+		}
+		margin-right: -16px;
+		z-index: 1;
+	}
+	.swiper-pagination-bullet{
+		opacity: 1;
+		margin-right: 16px;
+		background: $light-gray;
+		position: relative;
+		transition: 0.3s;
+		&:before{
+			position: absolute;
+			$dimen : -8px;
+			left: $dimen;
+			right: $dimen;
+			top: $dimen;
+			bottom: $dimen;
+			content: "";
+			background: none;
+			border-radius: 20px;
+			transition: 0.3s;
+			z-index: -1;
+			border: 1px solid transparent;
+		}
+		&:after{
+			position: absolute;
+			$dimen : -6px;
+			left: $dimen;
+			right: $dimen;
+			top: $dimen;
+			bottom: $dimen;
+			content: "";
+			background: none;
+			transition: 0.3s;
+			z-index: 0;
+		}
+		&:hover,
+		&.swiper-pagination-bullet-active{
+			background: $color1;
+			&:before{
+//						background: $light-gray;
+				background: transparent;
+				$dimen : -4px;
+				left: $dimen;
+				right: $dimen;
+				top: $dimen;
+				bottom: $dimen;
+				border-color: $color1;
+			}
+		}
+	}
+	// navigaton button
+	.items-button{
+		//top: 128px;
+		top: 136px;
+		position: absolute;
+		margin-right: -8px;
+		margin-left: -8px;
+		.txt{
+			display: none;
+			@media (min-width: 601px){
+				display: inline-block;
+			}
+		}
+	}
+	.items-button-prev{
+		float: left;
+		left: 16px;
+		@media (min-width: 601px){
+			left: 128px;
+		}
+	}
+	.items-button-next{
+		float: right;
+		right: 16px;
+		@media (min-width: 601px){
+			right: 128px;
+		}
+	}
+	
+	// Item list 
+	.item-list{
+		margin: auto;
+		margin-top: 32px;
+		li{
+			@include clearfix;
+			padding-right: 64px;
+			margin-bottom: 32px;
+			position: relative;
+			text-align: left;
+			&.swiper-slide{
+				padding-right: 0px;
+			}
+			.item-box{
+				display: block;
+				@include clearfix;
+			}
+			.item-img{
+				display: block;
+				width: 100%;
+				height: 0;
+				padding-bottom: 60%;
+				content: "";
+				position: relative;
+				margin-bottom: 16px;
+				overflow: hidden;
+				@media (min-width: 601px){
+					width: percentage(1/2);
+					padding-bottom: 50%;
+					float: left;
+				}
+				.img{
+					height: 100%;
+					width: 100%;
+					padding-bottom: 100%;
+					position: relative;
+					top: 0;
+					left: 0;
+					content: "";
+				}
+			}
+			.item-desc{
+				width: 100%;
+				padding: 16px;
+				box-sizing: border-box;
+				@media (min-width: 601px){
+					width: percentage(1/2);
+					float: right;
+					padding: 64px 48px;
+				}
+			}
+			.btns{
+				margin-top: 32px;
+			}
+			h4{
+				font-family: $sans;
+				font-size: $text-size;
+				font-weight: normal;
+				color: $white;
+				text-transform: uppercase;
+			}
+			h3,
+			.title{
+				font-size: 2em;
+				font-family: $serif;
+				color: $color1;
+				position: relative;
+				margin-bottom: 8px;
+				padding-bottom:  8px;
+				font-weight: bold;
+			}
+			.price{
+				font-size: 24px;
+				margin-top: 8px;
+				margin-bottom: 0px;
+				padding-bottom: 0px;
+				font-family: $sans;
+				font-weight: normal;
+			}
+			.desc{
+				p{
+					font-family: $sans;
+					font-size: $text-size;
+					color: $white;
+				}
+			}
+		}
+		
+		.swiper-slide{
+			.item-desc{
+				
+				@media (min-width: 601px){
+					transition: 0.3s;
+					transition-delay: 0.0s;
+					transform: scale(0.85);
+					opacity: 0;
+				}
+			}
+			.item-img{
+				
+				@media (min-width: 601px){
+					transition: 0.3s;
+					transform: scale(0.5);
+				}
+			}
+			&.swiper-slide-prev{
+				.item-img{
+					@media (min-width: 601px){
+						opacity: 0.5;
+						transform:  translateX(75%) scale(0.5);
+					}
+				}
+			}
+			&.swiper-slide-next{
+				.item-img{
+					@media (min-width: 601px){
+						opacity: 0.5;
+						transform: scale(0.5);
+					}
+				}
+			}
+			&.swiper-slide-active{
+				transform: none;
+				opacity: 1;
+				.item-desc{
+					transition-delay: 0.3s;
+					opacity: 1;
+					transform: none;
+				}
+				.item-img{
+					transform: none;
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
+
+	

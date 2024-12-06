@@ -1,0 +1,101 @@
+@import "../mixins";
+@import "../variables";
+
+
+// Dot navigation at right
+#fp-nav.right,
+#fp-nav{
+	top: auto;
+	//top : 144px;
+	bottom : 64px;
+	right: 32px;
+}
+
+#fp-nav.right{
+    right: 0px;
+    margin-right: 48px; 
+	position: fixed;
+	//position: absolute;
+}
+#fp-nav ul{
+	margin-top: -22px;
+}
+#fp-nav ul li, .fp-slidesNav ul li {
+    height: 14px;
+	margin: 4px;
+	margin-right: 0;
+}
+#fp-nav span, .fp-slidesNav span{
+    border-color: $white;
+	-webkit-transition: 0.3s;
+	transition: 0.3s;
+	width: 10px;
+	height: 16px;
+}
+#fp-nav ul li a.active span,
+#fp-nav ul li a:hover span,
+#fp-nav ul li a.active:hover span,
+#fp-nav ul li a span{
+	background: $medium-gray;
+	width: 16px;
+	border-radius: 0;
+	height: 1px;
+	left: auto;
+	right: 0;
+	top: 0;
+	margin-top: 0;
+	transition: 0.3s;
+}
+#fp-nav ul li a span.title{
+	position: absolute;
+	top: -11px!important;
+	right: 36px!important;
+	text-align: right;
+	font-size: 14px!important;
+	font-family: $sans;
+	width: 120px !important;
+	height: auto !important;
+	background: none !important;
+	border: none !important;
+	margin: auto !important;
+	padding: 0 !important;
+	transition: 0.6s;
+	color: $color1;
+	opacity: 0;
+	visibility: hidden;
+}
+#fp-nav ul li a.active span.title{
+	opacity: 1;
+	visibility: visible;
+}
+#fp-nav ul li a span:before{
+	display: none;
+}
+#fp-nav ul li a:hover span{
+	width: 24px;
+	background: transparentize($white,0.6);
+}
+#fp-nav ul li a.active span,
+#fp-nav ul li a.active:hover span{
+	width: 16px;
+	background: $color1;
+}
+	
+body.left-light{
+	#fp-nav ul li a:hover span{
+		background: transparentize($white,0.6);
+	}
+	#fp-nav ul li a.active span,
+	#fp-nav ul li a:hover span,
+	#fp-nav ul li a.active:hover span,
+	#fp-nav ul li a span{
+		background: $medium-gray;
+	}
+	#fp-nav span, .fp-slidesNav span{
+		border-color: $medium-gray;
+	}
+	#fp-nav ul li a.active span,
+	#fp-nav ul li a.active:hover span{
+		background: $color1;
+	}
+}

@@ -1,0 +1,109 @@
+@import "../mixins";
+@import "../variables";
+
+
+
+/* Section footer with scroll down button / .s-footer */
+.s-footer {
+    bottom: 0;
+	left: 0;
+	right: 0;
+    position: absolute;
+    padding: 0px;
+	z-index: 100;
+	transition: 0.3s;
+	a{
+		color: $color1;
+		display: block;
+		margin: auto;
+		margin-bottom: (24px);
+		width: 160px;
+		text-align: center;
+		font-family: $sans;
+		font-size: 14px;
+		position: relative;
+		height: 32px;
+		transition: 0.3s;
+		.text{
+			position: relative;
+		}
+		.icon{
+			content: "\f488";
+			font-family: "Ionicons";
+			color: $white;
+			line-height: 1;
+			position: absolute;
+			font-size: 32px;
+			width: 32px;
+			height: 32px;
+			left: 50%;
+			top: -32px;
+			margin-left: -16px;
+			transition: 0.3s;
+			.ic{
+				transform: translateY(-20px) rotate(-90deg);
+				position: relative;
+				display: block;
+				font-size: 64px;
+			}
+//			pointer-events: none;
+			&:before{
+				content: "";
+				position: absolute;
+				background: $color1;
+				top: auto;
+				left: 15.5px;
+				right: 15.5px;
+				bottom: 10px;
+				height: 48px;
+				z-index: 1;
+				transition: 0.3s;
+			}
+			&:after{
+				content: "";
+				position: absolute;
+				border: 4px solid $color1;
+				border-top: none;
+				border-left: none;
+				$dist: 10px;
+				top: $dist;
+				left: $dist;
+				right: $dist;
+				bottom: $dist;
+				width: auto;
+				transition: 0.3s;
+				transform:  translateY(-2px) rotate(45deg);
+	//			pointer-events: none;
+			}
+		}
+		
+		&:hover{
+			color: $white;
+			&:after{
+				bottom: -64px;
+			}
+			.icon{
+				&:before{
+					background: transparentize($white,0.7);
+					height: 24px;
+				}
+			}
+		}
+	}
+}
+
+// Animation
+.section .s-footer{
+	@media(min-width: 801px){
+		transform: translateY(-105%);
+		opacity: 0;
+		transition: 0.9s;
+		transition-timing-function: cubic-bezier(.52, .42, 0, 1.01);
+	}
+}
+.section.anim.active .s-footer{
+	visibility: visible;
+	transform: none;
+	transition-delay: 0.0s;
+	opacity: 1;
+}
